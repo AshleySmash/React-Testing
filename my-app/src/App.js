@@ -1,7 +1,11 @@
 // Expenses is the name we access the import by and the from is where it's located sense it's a js file we don't need to put the .js at the end
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
+
+//------------------- Alternate Syntax for functions! ------------------------------
+// const App = () => {} 
+
 function App() {
-  // Creating an array (we use this to create multiple peices of data)
+  // Creating an array (we use this to create multiple peices of data) 
   const expenses = [
     {
       id: "e1",
@@ -34,8 +38,7 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <Expenses items={expenses}/>
-
+      <Expenses items={expenses} />
     </div>
   );
 }

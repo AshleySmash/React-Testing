@@ -1,5 +1,8 @@
 import "./ExpenseDate.css";
 
+//------------------- Alternate Syntax for functions! ------------------------------
+// const ExpenseDate = (props) => {}
+
 function ExpenseDate(props) {
   //toLocalString displays time/date in a more readable way 'long' gives the whole month name
   const month = props.date.toLocaleString("en-US", { month: "long" });
