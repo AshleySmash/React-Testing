@@ -1,6 +1,8 @@
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 import Card from "../UI/Card";
+// import { useState } from "react"; // no longer needed
+
 // this is seperate form App.js because App.js is what is going to load this ExpenseItem.js
 // This is a component
 // variables that are passed intot the function () are called props
@@ -9,6 +11,22 @@ import Card from "../UI/Card";
 // const ExpenseItem = (props) => {}
 
 function ExpenseItem(props) {
+  /* useState() has to be delarced directly into a component function not 
+   outside of the function or in the return() or in the nested functions of the component such as clickHandler
+   The Value that you insert into useState Tells it that it is what you want to change so react knows what to update
+   useState returns a function that allows us to reassign the value, it returns an array where the first element is the value the second is the updating function that allows us to change the data 
+   const [title, setTitle] uses array destructoring, you can have the title, and setTitle be whatever words you want
+
+// We no longer need these const's because of what we did in expenseForm 
+      const [title, setTitle] = useState(props.title); 
+
+  // function that is called in the click event on the button
+      const clickHandler = () => {
+        setTitle("Updated!");
+        console.log(title);
+      };
+*/
+
   // didn't use () with return because we only have one element if we had multiple we would need to use ()
   //   return <h2>Expense Item!</h2>;
 
@@ -42,6 +60,20 @@ function ExpenseItem(props) {
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
+      {/* The button has an anyonomus function () => {} which means we didn't specify a name and we created the function inside of the button tag 
+          It also has an event the onClick when the button is clicked it displayes to the console clicked with the number of times it was clicked so far
+      <button
+        onClick={() => {
+          console.log("Clicked!");
+        }}
+      >
+        Change Title
+      </button>
+      */}
+
+      {/* Calling a function in the event don't put () on the clickHandler() because we are not executing the function we are just pointing to it  
+      We no longer need this button because of ExpenseForm
+      <button onClick={clickHandler}> Change Title </button> */}
     </Card>
   );
 }
